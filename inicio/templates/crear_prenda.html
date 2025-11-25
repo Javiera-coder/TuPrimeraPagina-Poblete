@@ -1,1 +1,11 @@
-Se añadió una prenda: {{prenda.marca}} {{prenda.categoria}} {{prenda.talla}} 
+{% extends "base.html" %}
+{% block title_head %}Crear prenda{% endblock title_head %}
+{% block contenido %}
+
+<form action={% url "crear" %} method='POST'>
+    {% csrf_token %}
+    {{formulario}}
+
+    <input type="submit" value="Crear">
+</form>
+{% endblock contenido %}

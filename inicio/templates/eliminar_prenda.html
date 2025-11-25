@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title_head %}Eliminar prenda{% endblock title_head %}
+{% block contenido %}
+
+<h1>Eliminar Prenda</h1>
+
+<p>¿Estás segura/o que deseas eliminar "{{ object }}"?</p>
+
+<form method="POST" action="{% url 'eliminar_prenda' object.pk %}">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+</form>
+
+<a href="{% url 'listado' %}">Cancelar</a>
+
+{% endblock contenido %}

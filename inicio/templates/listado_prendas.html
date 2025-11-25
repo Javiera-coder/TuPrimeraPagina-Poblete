@@ -1,7 +1,17 @@
+{% extends "base.html" %}
+{% block title_head %}Listado prendas{% endblock title_head %}
+{% block contenido %}
 <h1>Listado de Prendas</h1>
-
 <ul>
     {% for prenda in listado_de_prendas %}
-        <li>{{ prenda }}</li>
+        <li>
+            {{ prenda }}
+
+            | <a href="{% url 'detalle_prenda' prenda.pk %}">Ver</a>
+            | <a href="{% url 'actualizar_prenda' prenda.pk %}">Editar</a>
+            | <a href="{% url 'eliminar_prenda' prenda.pk %}">Eliminar</a>
+        
+        </li>
     {% endfor %}
 </ul>
+{% endblock contenido %}
