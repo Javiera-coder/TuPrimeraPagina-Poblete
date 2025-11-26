@@ -1,7 +1,18 @@
 {% extends "base.html" %}
 {% block title_head %}Listado prendas{% endblock title_head %}
 {% block contenido %}
+
 <h1>Listado de Prendas</h1>
+
+<div class="buscador">
+    <form action="{% url 'listado' %}" method="get">
+    {{ formulario }}
+    <input type="submit" value="Buscar">
+</form>
+
+</div>
+
+{% if listado_de_prendas %}
 <ul>
     {% for prenda in listado_de_prendas %}
         <li>
@@ -10,8 +21,11 @@
             | <a href="{% url 'detalle_prenda' prenda.pk %}">Ver</a>
             | <a href="{% url 'actualizar_prenda' prenda.pk %}">Editar</a>
             | <a href="{% url 'eliminar_prenda' prenda.pk %}">Eliminar</a>
-        
         </li>
     {% endfor %}
 </ul>
+{% else %}
+<p>No se encontraron prendas</p>
+{% endif %}
+
 {% endblock contenido %}

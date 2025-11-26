@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title_head %}Cerrar sesión{% endblock title_head %}
+
+{% block contenido %}
+<h1>Sesión cerrada</h1>
+<p>Has salido correctamente.</p>
+
+<a href="{% url 'inicio' %}">Volver al inicio</a>
+{% endblock contenido %}

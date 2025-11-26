@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title_head %}Login{% endblock title_head %}
+{% block contenido %}
+<h1>Iniciar sesión</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Ingresar</button>
+</form>
+
+<a href="{% url 'registro' %}">Crear cuenta</a>
+{% endblock %}
