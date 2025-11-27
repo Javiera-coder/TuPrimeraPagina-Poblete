@@ -1,34 +1,61 @@
-# Proyecto Coder - Tienda de Ropa
+# Proyecto Coder - Tienda de Ropa Urbana
 
-Este es un proyecto básico para la clase de Coder-Entrega 3. La idea es crear una tienda de ropa donde se puedan registrar prendas y ver un listado.
+Este proyecto fue desarrollado como parte de la **Entrega Final** del curso de Python.  
+Consiste en una **tienda básica de ropa** donde los usuarios pueden registrarse, iniciar sesión y gestionar prendas (crear, ver, actualizar y eliminar).
 
-## Tecnologías a usar:
 
-- Python  
-- Django  
-- HTML  
-- Git y GitHub
+## Funcionalidades principales
 
-## Modelo principal:
-Prenda
-- Marca
-- Categoría
-- Talla
+### Autenticación
+- Registro de usuarios
+- Inicio de sesión
+- Cierre de sesión
+- Acceso restringido para crear/editar/eliminar prendas (solo usuarios logueados)
 
-## Vistas creadas:
-- Inicio
-- Otra: como ejemplo de prueba en clase
-- Crear prenda: para guardar nuevas prendas en la base de datos
-- Listado: para listar las prendas creadas
+### Gestión de prendas
+Modelo **Prenda**:
+- Marca  
+- Categoría (distintos tipos de prendas que existan)  
+- Talla  
+- Imagen  
+
+Vistas disponibles:
+- **Inicio**: página principal
+- **Acerca de mí**: información de la autora y del proyecto
+- **Crear prenda**: solo para usuarios autenticados
+- **Listado de prendas**: muestra todas las prendas creadas
+- **Detalle de prenda**: vista "Ver"
+- **Actualizar prenda**
+- **Eliminar prenda**
+- **Buscador de prendas por categoría**
+
+
+## Manejo de imágenes
+El proyecto permite:
+- Subir una imagen al crear una prenda
+- Mantener la imagen actual al actualizar (no es obligatorio cambiarla)
+
+## Tecnologías utilizadas
+- **Python**
+- **Django**
+- **HTML**
+- **Git y GitHub**
 
 
 ## Cómo ejecutar el proyecto
 1. Activar el entorno virtual:
    ```bash
    source .venv/Scripts/activate
-2. Iniciar servidor: python manage.py runserver
 
-3. Entrar al proyecto
+2. Instalar dependencias
+
+3. Iniciar servidor: python manage.py runserver
+
+4. Entrar al proyecto
+
+## Video demostración
+
+Demo: https://drive.google.com/drive/folders/11MbQOlBrG6tpmhDKr7xeAEoyVY2CExrf?usp=sharing 
 
 ## Proyecto creado por
 
