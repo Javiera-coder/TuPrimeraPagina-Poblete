@@ -8,6 +8,11 @@
 <p>Categoría: {{ prenda.categoria }}</p>
 <p>Talla: {{ prenda.talla }}</p>
 
+{% if prenda.imagen %}
+<p>Imagen: <img src={{ prenda.imagen.url }} alt='Imagen de la prenda' height='200px'> </p>
+
+{% endif %}
+
 <a href="{% url 'listado' %}">Volver al listado</a>
 
 {% endblock contenido %}

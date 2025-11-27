@@ -1,9 +1,9 @@
 from django.urls import path
-from inicio.views import inicio, otra, crear_prenda, listado_prendas, PrendaDetailView, PrendaDeleteView, PrendaUpdateView
+from inicio.views import inicio, about, crear_prenda, listado_prendas, PrendaDetailView, PrendaDeleteView, PrendaUpdateView
 
 urlpatterns = [
     path('', inicio, name="inicio"),
-    path('otra/', otra, name="otra"),
+    path('about/', about, name="about"),
     path('crear-prenda/', crear_prenda, name="crear"),
     path('listado-prendas/', listado_prendas, name="listado"),
     path("prendas/<int:pk>/", PrendaDetailView.as_view(), name="detalle_prenda"),

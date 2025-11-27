@@ -1,5 +1,23 @@
 {% extends "base.html" %}
 {% block title_head %}Inicio{% endblock title_head %}
 {% block contenido %}
-<h1>¡Hola, te damos la bienvenida!</h1>
-{% endblock contenido %}
+<h1>Bienvenido a Urban Store</h1>
+
+<p>
+    Esta es una tienda de ropa de estilo urbano creada como parte de mi proyecto final del curso de Python y Django.
+    Aquí puedes encontrar prendas clasificadas por marca, categoría y talla.
+</p>
+
+{% if user.is_authenticated %}
+    <p>Hola <strong>{{ user.username }}</strong>, gracias por volver.</p>
+{% else %}
+    <p>
+        Para acceder a todas las funciones del sitio, como crear, editar o eliminar prendas,
+        debes iniciar sesión o registrarte.
+    </p>
+{% endif %}
+
+<p>
+    Usa el menú superior para navegar entre las distintas secciones del proyecto.
+</p>
+{% endblock %}

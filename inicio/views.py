@@ -10,16 +10,16 @@ from django.contrib.auth.decorators import login_required
 def inicio(request):
     return render(request, 'inicio.html')
 
-def otra(request):
-    return render(request, 'otra.html')
+def about(request):
+    return render(request, 'about.html')
 
 @login_required
 def crear_prenda(request):
     if request.method == 'POST':
-        formulario = CrearPrenda(request.POST)
+        formulario = CrearPrenda(request.POST, request.FILES)
         if formulario.is_valid():
             info = formulario.cleaned_data
-        prenda = Prenda(marca=info.get('marca'), categoria=info.get('categoria'), talla=info.get('talla'))
+        prenda = Prenda(marca=info.get('marca'), categoria=info.get('categoria'), talla=info.get('talla'), imagen=info.get('imagen'))
         prenda.save()
         return redirect('listado')
     else:
@@ -62,4 +62,9 @@ class PrendaUpdateView(LoginRequiredMixin, UpdateView):
     model = Prenda
     fields = "__all__"         
     template_name = "actualizar_prenda.html"
-    success_url = reverse_lazy("listado") 
+    success_url = reverse_lazy("listado")
+
+    def get_form(self, *args, **kwargs):
+        form = super().get_form(*args, **kwargs)
+        form.fields['imagen'].required = False
+        return form
